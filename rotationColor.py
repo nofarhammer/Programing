@@ -1,20 +1,24 @@
 import mraa
-import pyupm_i2clcd as lcd
 import math
 
-myLCD = mraa.I2C(0)
-#rotate = mraa.A0(0)
-myLCD.dir(mraa.DIR_OUT)
+from random import randrange
+c=0
+r=0
+g=0
+b=0
 
+x=mraa.I2c(0)
+x.address(0x62)
 
- 
-# display - lcd
-lcdDisplay = lcd.Jhd1313m1(0, 0x3E, 0x62)
- 
-while 1:
-		r=math.floor(random()*10)
-		g=math.floor(random()*10)
-		b=math.floor(random()*10)
-       # lcdDisplay.setCursor(0, 0)
-        lcdDisplay.set_color(r,g,b)
+# initialise device
+x.writeReg(0, 0)
+x.writeReg(1, 0)
 
+# sent RGB color data
+while c<10:
+        r=randrange(0,256)
+        g-randrange(0,256)
+        b=randrange(0,256)
+        x.writeReg(0x08, r)
+        x.writeReg(0x04, g)
+        c=c+1
