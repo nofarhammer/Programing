@@ -1,5 +1,6 @@
 import mraa
 import math
+import time
 
 from random import randrange
 c=0
