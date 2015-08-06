@@ -26,15 +26,12 @@ x.writeReg(1, 0)
 
 # sent RGB color data
 while c<10:
-       # print (rot.read())
-        r=randrange(0,256)
-        g-randrange(0,256)
-        b=randrange(0,256)
+        degree = adc.read()             # Read the ADC value
+        r=math.floor(degree*8)%256
+        g=math.floor(degree*30)%256
+        b=math.floor(degree*90/2)%256
         x.writeReg(0x08, r)
         x.writeReg(0x04, g)
+        x.writeReg(0x02, b)
         c=c+1
-        value = adc.read()             # Read the ADC value
-        print (adc)
-        led_intensity = value/1024  # Determine the duty cycle based on ADC value
-        pwm.write(led_intensity)   
         time.sleep(0.5)
