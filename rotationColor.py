@@ -27,9 +27,9 @@ x.writeReg(1, 0)
 # sent RGB color data
 while c<10:
         degree = adc.read()             # Read the ADC value
-        r=(math.floor(degree)*10+400)%200
-        g=(math.floor(degree)*15+150)%200
-        b=(math.floor(degree)*20+1)%200
+        r=(math.floor(degree)*10+400)%100
+        g=(math.floor(degree)*15+150)%100
+        b=(math.floor(degree)*20+1)%100
         x.writeReg(0x08, r)
         x.writeReg(0x04, g)
         x.writeReg(0x02, b)
