@@ -17,7 +17,7 @@ x.writeReg(1, 0)
 
 # sent RGB color data
 while c<10:
-        print (x.read())
+        print (rot.read())
         r=randrange(0,256)
         g-randrange(0,256)
         b=randrange(0,256)
