@@ -34,6 +34,6 @@ while c<10:
         c=c+1
         value = adc.read()             # Read the ADC value
         print (adc)
-        led_intensity = value/ROT_MAX  # Determine the duty cycle based on ADC value
+        led_intensity = value/1024  # Determine the duty cycle based on ADC value
         pwm.write(led_intensity)   
         time.sleep(0.5)
