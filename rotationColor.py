@@ -32,6 +32,6 @@ while c<10:
         b=(math.floor(degree)*20+1)%100
         x.writeReg(0x08, r)
         x.writeReg(0x04, g)
-      #  x.writeReg(0x02, b)
+        x.writeReg(0x02, b)
         c=c+1
         time.sleep(0.5)
