@@ -25,7 +25,7 @@ while 1:
         r=(math.floor(degree)*10+400)%256
         g=(math.floor(degree)*15+150)%256
         b=(math.floor(degree)*20+1)%256
-        x.writeReg(0x08, r)
-        x.writeReg(0x04, g)
+        x.writeReg(0x1c, r)
+        x.writeReg(0x08, g)
         x.writeReg(0x02, b)
         time.sleep(0.5)
