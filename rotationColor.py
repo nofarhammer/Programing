@@ -22,11 +22,10 @@ LCD.writeReg(1, 0)
 # sent RGB color data
 while 1:
         degree = adc.read()             # Read the ADC value
-        r=(math.floor(degree)*10+400)%256
-        g=(math.floor(degree)*15+150)%256
-        b=(math.floor(degree)*20+1)%256
-        #LCD.writeReg(0x08, r)
-        #LCD.writeReg(0x04, g)
-        #LCD.writeReg(0x02, b)
-        print r, g, b
+        r=int(math.floor(degree)*10+400)%256
+        g=int(math.floor(degree)*15+150)%256
+        b=int(math.floor(degree)*20+1)%256
+        LCD.writeReg(0x08, r)
+        LCD.writeReg(0x04, g)
+        LCD.writeReg(0x02, b)
         time.sleep(0.5)
